@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+{
+opkg update && opkg install luci-theme-material
+wget --no-check-certificate "https://raw.githubusercontent.com/alkhanet26/redgrey-alkhanet/main/brand.png" -O /www/luci-static/material/brand.png && chmod +x /www/luci-static/material/brand.png
+wget --no-check-certificate "https://raw.githubusercontent.com/alkhanet26/redgrey-alkhanet/main/cascade.css"  -O /www/luci-static/material/cascade.css && chmod +x /www/luci-static/material/cascade.css
+wget --no-check-certificate "https://raw.githubusercontent.com/alkhanet26/redgrey-alkhanet/main/custom.css" -O /www/luci-static/material/custom.css && chmod +x /www/luci-static/material/custom.css
+wget --no-check-certificate "https://raw.githubusercontent.com/alkhanet26/redgrey-alkhanet/main/sysauth.htm" -O /usr/lib/lua/luci/view/sysauth.htm && chmod +x /usr/lib/lua/luci/view/sysauth.htm
+}

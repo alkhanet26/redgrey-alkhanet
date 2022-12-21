@@ -14,11 +14,30 @@
 	<% end -%>
 
 	<div class="cbi-map">
-		<h2 name="content"><%:Authorization Required%></h2>
+		<center>
+		<font face="Arial Black" color="red">
+		<h1 name="content"><%:ALKHANET%></h1>
+		</font>					
 		<div class="cbi-map-descr">
-			<%:Please enter your username and password.%>
-		</div>
-		<div class="cbi-section"><div class="cbi-section-node">
+			<%:Wireless Freedom%>
+		<div class="jam-alkhanet"
+			<p id="time"></p>
+		<script>
+			var tw = new Date();
+			if (tw.getTimezoneOffset() == 0) (a=tw.getTime() + ( 7 *60*60*1000))
+			else (a=tw.getTime());
+			tw.setTime(a);
+			var tahun= tw.getFullYear ();
+			var hari= tw.getDay ();
+			var bulan= tw.getMonth ();
+			var tanggal= tw.getDate ();
+			var hariarray=new Array("Minggu,","Senin,","Selasa,","Rabu,","Kamis,","Jum'at,","Sabtu,");
+			var bulanarray=new Array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","Nopember","Desember");
+			document.getElementById("time").innerHTML = hariarray[hari]+" "+tanggal+" "+bulanarray[bulan]+" "+tahun+" Jam " + ((tw.getHours() < 10) ? "0" : "") + tw.getHours() + ":" + ((tw.getMinutes() < 10)? "0" : "") + tw.getMinutes();
+		</script>
+		</center>
+
+</body>		<div class="cbi-section"><div class="cbi-section-node">
 			<div class="cbi-value">
 				<label class="cbi-value-title"><%:Username%></label>
 				<div class="cbi-value-field">
@@ -34,9 +53,9 @@
 		</div></div>
 	</div>
 
-	<div class="cbi-page-actions">
+	<div class="cbi-page-actions">	
 		<input type="submit" value="<%:Login%>" class="btn cbi-button cbi-button-apply" />
-		<input type="reset" value="<%:Reset%>" class="btn cbi-button cbi-button-reset" />
+		<input type="reset" value="<%:Reset%>" class="btn cbi-button cbi-button-reset" />			
 	</div>
 </form>
 <script type="text/javascript">//<![CDATA[

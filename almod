@@ -2,10 +2,13 @@
 
 
 {
-opkg update && opkg install luci-theme-material
+opkg update && opkg install luci-theme-material unzip
 wget --no-check-certificate "https://raw.githubusercontent.com/alkhanet26/redgrey-alkhanet/main/brand.png" -O /www/luci-static/material/brand.png && chmod +x /www/luci-static/material/brand.png
 wget --no-check-certificate "https://raw.githubusercontent.com/alkhanet26/redgrey-alkhanet/main/cascade.css"  -O /www/luci-static/material/cascade.css && chmod +x /www/luci-static/material/cascade.css
 wget --no-check-certificate "https://raw.githubusercontent.com/alkhanet26/redgrey-alkhanet/main/custom.css" -O /www/luci-static/material/custom.css && chmod +x /www/luci-static/material/custom.css
 wget --no-check-certificate "https://raw.githubusercontent.com/alkhanet26/redgrey-alkhanet/main/sysauth.htm" -O /usr/lib/lua/luci/view/sysauth.htm && chmod +x /usr/lib/lua/luci/view/sysauth.htm
 wget --no-check-certificate "https://raw.githubusercontent.com/alkhanet26/redgrey-alkhanet/main/release_ram.lua" -O /usr/lib/lua/luci/controller/release_ram.lua && chmod +x /usr/lib/lua/luci/controller/release_ram.lua
+wget --no-check-certificate "https://raw.githubusercontent.com/alkhanet26/redgrey-alkhanet/main/header.htm" -O /usr/lib/lua/luci/view/themes/material/header.htm && chmod 644 /usr/lib/lua/luci/view/themes/material/header.htm
+wget --no-check-certificate "https://raw.githubusercontent.com/alkhanet26/redgrey-alkhanet/main/header.htm" -O /usr/lib/lua/luci/view/themes/material/header.htm && chmod 644 /usr/lib/lua/luci/view/themes/material/footer.htm
+wget --no-check-certificate "https://raw.githubusercontent.com/alkhanet26/redgrey-alkhanet/main/navbar.zip" -O /www/luci-static/material/navbar.zip && cd /www/luci-static/material && unzip navbar.zip && rm /www/luci-static/material/navbar.zip
 }

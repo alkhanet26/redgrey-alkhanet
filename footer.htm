@@ -1,0 +1,85 @@
+<%#
+	Material is a clean HTML5 theme for LuCI. It is based on luci-theme-bootstrap and MUI
+
+	luci-theme-material
+	Copyright 2015 Lutty Yang <lutty@wcan.in>
+
+	Have a bug? Please create an issue here on GitHub!
+	https://github.com/LuttyYang/luci-theme-material/issues
+
+	luci-theme-bootstrap:
+	Copyright 2008 Steven Barth <steven@midlink.org>
+	Copyright 2008 Jo-Philipp Wich <jow@openwrt.org>
+	Copyright 2012 David Menting <david@nut-bolt.nl>
+
+	MUI:
+	https://github.com/muicss/mui
+
+	Licensed to the public under the Apache License 2.0
+-%>
+
+<% local ver = require "luci.version" %>
+	</div>
+	<footer class="mobile-hide">
+	<a href="https://github.com/openwrt/luci">Powered by <%= ver.luciname %>
+	</div>
+</div>
+
+<script type="text/javascript">L.require('menu-material')</script>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="<%=media%>/cascade.css">
+<style media="only screen and (max-device-width: 854px)">
+body 
+{
+  margin: 0;
+  background-color: lightgrey;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+  background-color: lightgrey;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: bar;
+  transition: top 0.3s;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  padding: 15px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+</style>
+</head>
+<body>
+<div id="navbar">
+  <a href='/cgi-bin/luci/admin/services/passwall'><img src="<%=media%>/navbar/passwall.png" width="30" height="30"></a>
+  <a href='/cgi-bin/luci/admin/services/openclash'><img src="<%=media%>/navbar/clash.png" width="30" height="30"></a>
+  <a href='/cgi-bin/luci/admin/services/openclash/proxy-provider-file-manage'><img src="<%=media%>/navbar/oceditor.png" width="30" height="30"></a>
+  <a href='/cgi-bin/luci/admin/services/ttyd'><img src="<%=media%>/navbar/terminal.png" width="30" height="30"></a>
+  <a href='/cgi-bin/luci/admin/services/tinyfm'><img src="<%=media%>/navbar/file.png" width="30" height="30"></a>
+  <a href='/cgi-bin/luci/admin/network/network'><img src="<%=media%>/navbar/interface.png" width="30" height="30"></a>
+</div>
+<script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.bottom = "0";
+  } else {
+    document.getElementById("navbar").style.bottom = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>
+</body>
+</html>
